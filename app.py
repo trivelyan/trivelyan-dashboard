@@ -196,8 +196,13 @@ def push_changes(app_name_param = None):
         app_name = request.args.get('app_name')
     if request.method == 'GET':
         app_name = request.args.get('app_name')
+        commit = request.args.get('commit')
+        os.system('heroku git:remote -a {0}'.format(app_name))
+        os.system('cd /{0}'.format(app_name))
+        os.system('git add . && git commit -m {0} && git push heroku master'.format(commit))
+        return table()
 
-    return "x"
+    return "no"
 ################################################################################
 ################################################################################
 

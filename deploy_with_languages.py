@@ -15,6 +15,11 @@ DEPLOY_LANG = {
             'repo_name' : 'go-getting-started',
             'link': 'https://github.com/heroku/go-getting-started.git',
             'command' : 'git clone https://github.com/heroku/go-getting-started.git'},
+
+    'java' : {'name':'java',
+            'repo_name' : 'java-getting-started',
+            'link': 'https://github.com/heroku/java-getting-started.git',
+            'command' : 'git clone https://github.com/heroku/java-getting-started.git'},
 }
 
 #print DEPLOY_LANG['go']['clone_command']

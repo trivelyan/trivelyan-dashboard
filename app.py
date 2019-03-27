@@ -1,7 +1,10 @@
 """
+LICENCED WITH GNU AFFERO GENERAL PUBLIC LICENSE (AGPLv3)
+
 Created by Talha Celik
 github.com/tlhcelik
 github.com/trivelyan-dashboard
+
 """
 
 

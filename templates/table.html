@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+{% include "style.html" ignore missing %}
+
+<body>
+<!--Sidebar including-->
+	{% include "sidebar.html" ignore missing %}
+
+    <div class="main-panel">
+		<nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Application List</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-dashboard"></i>
+								<p class="hidden-lg hidden-md">Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-globe"></i>
+                                    <b class="caret hidden-sm hidden-xs"></b>
+																		{% if notify_number != 0 %}
+                                    <span class="notification hidden-sm hidden-xs">{{notify_number}}</span>
+																		{% endif %}
+									<p class="hidden-lg hidden-md">
+										5 Notifications
+										<b class="caret"></b>
+									</p>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="/create_side">Create Application </a></li>
+
+                              </ul>
+                        </li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                           <a href="/user">
+                               <p>Account</p>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/logout">
+                                <p>Log out</p>
+                            </a>
+                        </li>
+						<li class="separator hidden-lg hidden-md"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                        <th>ID</th>
+                                    	<th>Name</th>
+                                    	<th>Dyno</th>
+                                    	<th>Web</th>
+                                    	<th>Addons</th>
+																			<th>Set</th>
+                                    </thead>
+                                    <tbody>
+																			<!--get apps from h3-->
+																			{% for i in range(0,app_list_len) %}
+                                        <tr>
+
+                                        	<td>{{ i+1 }}</td>
+                                        	<td><a href="https://{{ app_list[i] }}.herokuapp.com" target="_blank">{{ app_list[i] }}</td>
+                                        	<td>{{ i }}</td>
+                                        	<td>{{ i }}</td>
+                                        	<td>{{ i }}</td>
+																					<td><a href="/edit?app={{ app_list[i] }}" class="fa fa-edit"></a></td>
+
+                                        </tr>
+																				{% endfor %}
+																				<!--get apps from h3-->
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+</body>
+
+
+</html>

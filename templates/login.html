@@ -1,7 +1,16 @@
 <!doctype html>
+{% block body %}
+
 <html lang="en">
 <head>
-	<title>Login V1</title>
+  <!--
+  Fork me on github
+  github.com/trivelyan
+  github.com/tlhcelik
+
+  -->
+	<title>{{ title_text }} Login</title>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -27,27 +36,20 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="{{ url_for('static', filename='login/images/img-01.png') }}" alt="IMG">
+					<img src="{{ url_for('static', filename='login/images/logo.jpg') }}" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<!-- login form start -->
+				<form method="POST" action="/login" class="login100-form validate-form">
 					<span class="login100-form-title">
 						Trivelyan Dashboard
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text"  name="api_key" placeholder="API KEY">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
 
@@ -56,23 +58,22 @@
 							Login
 						</button>
 					</div>
-
-					<div class="text-center p-t-12">
+          {% for err in get_flashed_messages() %}
+          <div class="text-center p-t-12" >
 						<span class="txt1">
-							Forgot
+							{{ err }}
 						</span>
-						<a class="txt2" href="#">
-							Username / Password?
-						</a>
+
 					</div>
+          {% endfor %}
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="#">
-							Create your Account
+						<a class="txt2" href="https://dashboard.heroku.com/account" target="_blank">
+							Get your API key
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
-				</form>
+				</form><!-- login form end -->
 			</div>
 		</div>
 	</div>
@@ -99,3 +100,4 @@
 
 </body>
 </html>
+{% endblock %}

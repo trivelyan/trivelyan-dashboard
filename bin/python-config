@@ -1,4 +1,4 @@
-#!/Users/tlhcelik/Desktop/trivelyan-dashboard/bin/python
+#!/Users/tlhcelik/Desktop/flask-demo/bin/python
 
 import sys
 import getopt

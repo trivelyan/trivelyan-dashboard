@@ -1,3 +1,3 @@
 # [Go to web page](https://trivelyan.github.io)
-# [You can download docker image](https://hub.docker.com/r/tlhcelik/trivelyan-container)
+# [You can download trivelyan docker image](https://hub.docker.com/r/tlhcelik/trivelyan-container)
 Trivelyan is a Heroku Project Management Dashboard

@@ -186,7 +186,7 @@ def create():
 
 ################################################################################
 ################################################################################
-#can not run this method
+#is not run this method
 @app.route('/push_changes', methods=['GET'])
 def push_changes(app_name_param = None):
     """
@@ -197,9 +197,8 @@ def push_changes(app_name_param = None):
     if request.method == 'GET':
         app_name = request.args.get('app_name')
         commit = request.args.get('commit')
-        os.system('heroku git:remote -a {0}'.format(app_name))
-        os.system('cd /{0}'.format(app_name))
-        os.system('git add . && git commit -m {0} && git push heroku master'.format(commit))
+        x = s.check_output(['bash', 'push.sh', app_name])
+        return x
         return table()
 
     return "no"
@@ -254,4 +253,4 @@ def login_test():
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=40)

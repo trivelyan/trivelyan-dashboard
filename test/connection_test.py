@@ -1,13 +1,6 @@
-import heroku3 as h3
+import subprocess as s
 
-def test_connection (conn):
-    try:
-        conn.apps()
-        return True
-    except Exception as e:
-        return False
+x = s.check_output(['bash', 'push.sh', 'talhacelik2'])
 
-conn = h3.from_key('key')
 
-print conn
-print test_connection(conn)
+print a

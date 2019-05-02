@@ -1,21 +1,11 @@
 push existing project
+  
+  heroku login 
+  
+  git clone https://github.com/heroku/php-getting-started.git {project_file}
 
+  cd {project_file}
 
-git clone https://github.com/heroku/php-getting-started.git {project_file}
+  heroku git:remote -a {projet_name}
 
-cd {project_file}
-
-heroku git:remote -a {projet_name}
-
-git push heroku master
-
-
-if make a some changes then use this command
-
-
-
-
-
-702  git add .
-703  git commit -m "test.html added"
-704  git push heroku master
+  git push heroku master
